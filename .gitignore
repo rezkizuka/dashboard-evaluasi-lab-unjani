@@ -1,0 +1,13 @@
+# Windows & Office temporary lock files
+~$*
+Thumbs.db
+Desktop.ini
+
+# OS generated files
+.DS_Store
+
+# Editor / IDE settings
+.vscode/
+.idea/
+*.swp
+*.bak

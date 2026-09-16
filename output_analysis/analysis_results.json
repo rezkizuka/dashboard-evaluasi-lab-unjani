@@ -1,0 +1,903 @@
+﻿{
+    "DatasetInfo":  {
+                        "TotalColumns":  25,
+                        "TotalRespondents":  226
+                    },
+    "CSI":  76.2,
+    "GrandMeanPerformance":  3.738,
+    "GrandMeanImportance":  0.693,
+    "ItemStatistics":  {
+                           "HW1":  {
+                                       "Code":  "HW1",
+                                       "Label":  "Hardware PC Mumpuni",
+                                       "Dimension":  "Hardware \u0026 Software",
+                                       "Mean":  3.142,
+                                       "SD":  1.134,
+                                       "Median":  3,
+                                       "Variance":  1.287,
+                                       "Skewness":  -0.241,
+                                       "Importance":  0.573,
+                                       "D1":  24,
+                                       "D2":  33,
+                                       "D3":  82,
+                                       "D4":  61,
+                                       "D5":  26,
+                                       "D1_Pct":  10.6,
+                                       "D2_Pct":  14.6,
+                                       "D3_Pct":  36.3,
+                                       "D4_Pct":  27,
+                                       "D5_Pct":  11.5,
+                                       "Quadrant":  "III (Prioritas Rendah / Low Priority)"
+                                   },
+                           "HW2":  {
+                                       "Code":  "HW2",
+                                       "Label":  "Peripheral Berfungsi Baik",
+                                       "Dimension":  "Hardware \u0026 Software",
+                                       "Mean":  3.416,
+                                       "SD":  1.026,
+                                       "Median":  3,
+                                       "Variance":  1.053,
+                                       "Skewness":  -0.303,
+                                       "Importance":  0.577,
+                                       "D1":  9,
+                                       "D2":  31,
+                                       "D3":  76,
+                                       "D4":  77,
+                                       "D5":  33,
+                                       "D1_Pct":  4,
+                                       "D2_Pct":  13.7,
+                                       "D3_Pct":  33.6,
+                                       "D4_Pct":  34.1,
+                                       "D5_Pct":  14.6,
+                                       "Quadrant":  "III (Prioritas Rendah / Low Priority)"
+                                   },
+                           "SW1":  {
+                                       "Code":  "SW1",
+                                       "Label":  "Software Sesuai \u0026 Terinstal",
+                                       "Dimension":  "Hardware \u0026 Software",
+                                       "Mean":  3.447,
+                                       "SD":  1.139,
+                                       "Median":  4,
+                                       "Variance":  1.297,
+                                       "Skewness":  -0.445,
+                                       "Importance":  0.626,
+                                       "D1":  17,
+                                       "D2":  23,
+                                       "D3":  72,
+                                       "D4":  70,
+                                       "D5":  44,
+                                       "D1_Pct":  7.5,
+                                       "D2_Pct":  10.2,
+                                       "D3_Pct":  31.9,
+                                       "D4_Pct":  31,
+                                       "D5_Pct":  19.5,
+                                       "Quadrant":  "III (Prioritas Rendah / Low Priority)"
+                                   },
+                           "NET1":  {
+                                        "Code":  "NET1",
+                                        "Label":  "Koneksi Lab Stabil",
+                                        "Dimension":  "Jaringan \u0026 Internet",
+                                        "Mean":  2.31,
+                                        "SD":  1.276,
+                                        "Median":  2,
+                                        "Variance":  1.628,
+                                        "Skewness":  0.598,
+                                        "Importance":  0.431,
+                                        "D1":  85,
+                                        "D2":  41,
+                                        "D3":  64,
+                                        "D4":  17,
+                                        "D5":  19,
+                                        "D1_Pct":  37.6,
+                                        "D2_Pct":  18.1,
+                                        "D3_Pct":  28.3,
+                                        "D4_Pct":  7.5,
+                                        "D5_Pct":  8.4,
+                                        "Quadrant":  "III (Prioritas Rendah / Low Priority)"
+                                    },
+                           "NET2":  {
+                                        "Code":  "NET2",
+                                        "Label":  "Kecepatan Internet Memadai",
+                                        "Dimension":  "Jaringan \u0026 Internet",
+                                        "Mean":  2.367,
+                                        "SD":  1.269,
+                                        "Median":  2,
+                                        "Variance":  1.611,
+                                        "Skewness":  0.434,
+                                        "Importance":  0.434,
+                                        "D1":  82,
+                                        "D2":  37,
+                                        "D3":  64,
+                                        "D4":  28,
+                                        "D5":  15,
+                                        "D1_Pct":  36.3,
+                                        "D2_Pct":  16.4,
+                                        "D3_Pct":  28.3,
+                                        "D4_Pct":  12.4,
+                                        "D5_Pct":  6.6,
+                                        "Quadrant":  "III (Prioritas Rendah / Low Priority)"
+                                    },
+                           "ENV1":  {
+                                        "Code":  "ENV1",
+                                        "Label":  "Kebersihan Meja/Lantai",
+                                        "Dimension":  "Fasilitas \u0026 Lingkungan",
+                                        "Mean":  4.19,
+                                        "SD":  0.945,
+                                        "Median":  4,
+                                        "Variance":  0.893,
+                                        "Skewness":  -1.045,
+                                        "Importance":  0.605,
+                                        "D1":  4,
+                                        "D2":  5,
+                                        "D3":  44,
+                                        "D4":  64,
+                                        "D5":  109,
+                                        "D1_Pct":  1.8,
+                                        "D2_Pct":  2.2,
+                                        "D3_Pct":  19.5,
+                                        "D4_Pct":  28.3,
+                                        "D5_Pct":  48.2,
+                                        "Quadrant":  "IV (Berlebihan / Possible Overkill)"
+                                    },
+                           "ENV2":  {
+                                        "Code":  "ENV2",
+                                        "Label":  "Suhu AC Nyaman",
+                                        "Dimension":  "Fasilitas \u0026 Lingkungan",
+                                        "Mean":  4.319,
+                                        "SD":  0.882,
+                                        "Median":  5,
+                                        "Variance":  0.778,
+                                        "Skewness":  -1.281,
+                                        "Importance":  0.705,
+                                        "D1":  3,
+                                        "D2":  4,
+                                        "D3":  33,
+                                        "D4":  64,
+                                        "D5":  122,
+                                        "D1_Pct":  1.3,
+                                        "D2_Pct":  1.8,
+                                        "D3_Pct":  14.6,
+                                        "D4_Pct":  28.3,
+                                        "D5_Pct":  54,
+                                        "Quadrant":  "II (Pertahankan Prestasi / Keep Up Good Work)"
+                                    },
+                           "ENV3":  {
+                                        "Code":  "ENV3",
+                                        "Label":  "Pencahayaan Lab Baik",
+                                        "Dimension":  "Fasilitas \u0026 Lingkungan",
+                                        "Mean":  4.027,
+                                        "SD":  0.952,
+                                        "Median":  4,
+                                        "Variance":  0.906,
+                                        "Skewness":  -0.699,
+                                        "Importance":  0.679,
+                                        "D1":  3,
+                                        "D2":  9,
+                                        "D3":  54,
+                                        "D4":  73,
+                                        "D5":  87,
+                                        "D1_Pct":  1.3,
+                                        "D2_Pct":  4,
+                                        "D3_Pct":  23.9,
+                                        "D4_Pct":  32.3,
+                                        "D5_Pct":  38.5,
+                                        "Quadrant":  "IV (Berlebihan / Possible Overkill)"
+                                    },
+                           "MGT1":  {
+                                        "Code":  "MGT1",
+                                        "Label":  "Jadwal Tepat Waktu",
+                                        "Dimension":  "Operasional \u0026 Layanan",
+                                        "Mean":  4.23,
+                                        "SD":  0.895,
+                                        "Median":  4,
+                                        "Variance":  0.8,
+                                        "Skewness":  -1.28,
+                                        "Importance":  0.725,
+                                        "D1":  5,
+                                        "D2":  2,
+                                        "D3":  34,
+                                        "D4":  80,
+                                        "D5":  105,
+                                        "D1_Pct":  2.2,
+                                        "D2_Pct":  0.9,
+                                        "D3_Pct":  15,
+                                        "D4_Pct":  35.4,
+                                        "D5_Pct":  46.5,
+                                        "Quadrant":  "II (Pertahankan Prestasi / Keep Up Good Work)"
+                                    },
+                           "MGT2":  {
+                                        "Code":  "MGT2",
+                                        "Label":  "Staf Lab Responsif",
+                                        "Dimension":  "Operasional \u0026 Layanan",
+                                        "Mean":  4.177,
+                                        "SD":  0.936,
+                                        "Median":  4,
+                                        "Variance":  0.875,
+                                        "Skewness":  -1.069,
+                                        "Importance":  0.716,
+                                        "D1":  5,
+                                        "D2":  2,
+                                        "D3":  46,
+                                        "D4":  68,
+                                        "D5":  105,
+                                        "D1_Pct":  2.2,
+                                        "D2_Pct":  0.9,
+                                        "D3_Pct":  20.4,
+                                        "D4_Pct":  30.1,
+                                        "D5_Pct":  46.5,
+                                        "Quadrant":  "II (Pertahankan Prestasi / Keep Up Good Work)"
+                                    },
+                           "MOD1":  {
+                                        "Code":  "MOD1",
+                                        "Label":  "Instruksi Sistematis",
+                                        "Dimension":  "Modul Praktikum",
+                                        "Mean":  3.819,
+                                        "SD":  0.932,
+                                        "Median":  4,
+                                        "Variance":  0.869,
+                                        "Skewness":  -0.585,
+                                        "Importance":  0.81,
+                                        "D1":  5,
+                                        "D2":  9,
+                                        "D3":  65,
+                                        "D4":  90,
+                                        "D5":  57,
+                                        "D1_Pct":  2.2,
+                                        "D2_Pct":  4,
+                                        "D3_Pct":  28.8,
+                                        "D4_Pct":  39.8,
+                                        "D5_Pct":  25.2,
+                                        "Quadrant":  "II (Pertahankan Prestasi / Keep Up Good Work)"
+                                    },
+                           "MOD2":  {
+                                        "Code":  "MOD2",
+                                        "Label":  "Materi Relevan Teori",
+                                        "Dimension":  "Modul Praktikum",
+                                        "Mean":  3.903,
+                                        "SD":  0.933,
+                                        "Median":  4,
+                                        "Variance":  0.87,
+                                        "Skewness":  -0.82,
+                                        "Importance":  0.804,
+                                        "D1":  6,
+                                        "D2":  7,
+                                        "D3":  53,
+                                        "D4":  97,
+                                        "D5":  63,
+                                        "D1_Pct":  2.7,
+                                        "D2_Pct":  3.1,
+                                        "D3_Pct":  23.5,
+                                        "D4_Pct":  42.9,
+                                        "D5_Pct":  27.9,
+                                        "Quadrant":  "II (Pertahankan Prestasi / Keep Up Good Work)"
+                                    },
+                           "MOD3":  {
+                                        "Code":  "MOD3",
+                                        "Label":  "Bahasa Jelas \u0026 Tidak Ambigu",
+                                        "Dimension":  "Modul Praktikum",
+                                        "Mean":  3.854,
+                                        "SD":  0.91,
+                                        "Median":  4,
+                                        "Variance":  0.827,
+                                        "Skewness":  -0.557,
+                                        "Importance":  0.804,
+                                        "D1":  4,
+                                        "D2":  8,
+                                        "D3":  64,
+                                        "D4":  91,
+                                        "D5":  59,
+                                        "D1_Pct":  1.8,
+                                        "D2_Pct":  3.5,
+                                        "D3_Pct":  28.3,
+                                        "D4_Pct":  40.3,
+                                        "D5_Pct":  26.1,
+                                        "Quadrant":  "II (Pertahankan Prestasi / Keep Up Good Work)"
+                                    },
+                           "MOD4":  {
+                                        "Code":  "MOD4",
+                                        "Label":  "Contoh Kasus Membantu",
+                                        "Dimension":  "Modul Praktikum",
+                                        "Mean":  3.858,
+                                        "SD":  0.956,
+                                        "Median":  4,
+                                        "Variance":  0.913,
+                                        "Skewness":  -0.842,
+                                        "Importance":  0.813,
+                                        "D1":  8,
+                                        "D2":  5,
+                                        "D3":  58,
+                                        "D4":  95,
+                                        "D5":  60,
+                                        "D1_Pct":  3.5,
+                                        "D2_Pct":  2.2,
+                                        "D3_Pct":  25.7,
+                                        "D4_Pct":  42,
+                                        "D5_Pct":  26.5,
+                                        "Quadrant":  "II (Pertahankan Prestasi / Keep Up Good Work)"
+                                    },
+                           "MOD5":  {
+                                        "Code":  "MOD5",
+                                        "Label":  "Kesulitan Tugas Sesuai",
+                                        "Dimension":  "Modul Praktikum",
+                                        "Mean":  3.827,
+                                        "SD":  0.948,
+                                        "Median":  4,
+                                        "Variance":  0.899,
+                                        "Skewness":  -0.556,
+                                        "Importance":  0.785,
+                                        "D1":  5,
+                                        "D2":  9,
+                                        "D3":  67,
+                                        "D4":  84,
+                                        "D5":  61,
+                                        "D1_Pct":  2.2,
+                                        "D2_Pct":  4,
+                                        "D3_Pct":  29.6,
+                                        "D4_Pct":  37.2,
+                                        "D5_Pct":  27,
+                                        "Quadrant":  "II (Pertahankan Prestasi / Keep Up Good Work)"
+                                    },
+                           "AST1":  {
+                                        "Code":  "AST1",
+                                        "Label":  "Kehadiran Tepat Waktu",
+                                        "Dimension":  "Dosen \u0026 Asisten",
+                                        "Mean":  3.973,
+                                        "SD":  1.015,
+                                        "Median":  4,
+                                        "Variance":  1.03,
+                                        "Skewness":  -0.886,
+                                        "Importance":  0.711,
+                                        "D1":  7,
+                                        "D2":  9,
+                                        "D3":  50,
+                                        "D4":  77,
+                                        "D5":  83,
+                                        "D1_Pct":  3.1,
+                                        "D2_Pct":  4,
+                                        "D3_Pct":  22.1,
+                                        "D4_Pct":  34.1,
+                                        "D5_Pct":  36.7,
+                                        "Quadrant":  "II (Pertahankan Prestasi / Keep Up Good Work)"
+                                    },
+                           "AST2":  {
+                                        "Code":  "AST2",
+                                        "Label":  "Penguasaan Materi Sangat Baik",
+                                        "Dimension":  "Dosen \u0026 Asisten",
+                                        "Mean":  3.929,
+                                        "SD":  0.931,
+                                        "Median":  4,
+                                        "Variance":  0.866,
+                                        "Skewness":  -0.585,
+                                        "Importance":  0.768,
+                                        "D1":  3,
+                                        "D2":  10,
+                                        "D3":  58,
+                                        "D4":  84,
+                                        "D5":  71,
+                                        "D1_Pct":  1.3,
+                                        "D2_Pct":  4.4,
+                                        "D3_Pct":  25.7,
+                                        "D4_Pct":  37.2,
+                                        "D5_Pct":  31.4,
+                                        "Quadrant":  "II (Pertahankan Prestasi / Keep Up Good Work)"
+                                    },
+                           "AST3":  {
+                                        "Code":  "AST3",
+                                        "Label":  "Penjelasan Instruksi Jelas",
+                                        "Dimension":  "Dosen \u0026 Asisten",
+                                        "Mean":  3.872,
+                                        "SD":  0.964,
+                                        "Median":  4,
+                                        "Variance":  0.93,
+                                        "Skewness":  -0.572,
+                                        "Importance":  0.735,
+                                        "D1":  4,
+                                        "D2":  12,
+                                        "D3":  61,
+                                        "D4":  81,
+                                        "D5":  68,
+                                        "D1_Pct":  1.8,
+                                        "D2_Pct":  5.3,
+                                        "D3_Pct":  27,
+                                        "D4_Pct":  35.8,
+                                        "D5_Pct":  30.1,
+                                        "Quadrant":  "II (Pertahankan Prestasi / Keep Up Good Work)"
+                                    },
+                           "AST4":  {
+                                        "Code":  "AST4",
+                                        "Label":  "Sikap Sopan \u0026 Profesional",
+                                        "Dimension":  "Dosen \u0026 Asisten",
+                                        "Mean":  4.066,
+                                        "SD":  0.904,
+                                        "Median":  4,
+                                        "Variance":  0.818,
+                                        "Skewness":  -0.812,
+                                        "Importance":  0.788,
+                                        "D1":  4,
+                                        "D2":  3,
+                                        "D3":  52,
+                                        "D4":  82,
+                                        "D5":  85,
+                                        "D1_Pct":  1.8,
+                                        "D2_Pct":  1.3,
+                                        "D3_Pct":  23,
+                                        "D4_Pct":  36.3,
+                                        "D5_Pct":  37.6,
+                                        "Quadrant":  "II (Pertahankan Prestasi / Keep Up Good Work)"
+                                    },
+                           "AST5":  {
+                                        "Code":  "AST5",
+                                        "Label":  "Membimbing Saat Kesulitan",
+                                        "Dimension":  "Dosen \u0026 Asisten",
+                                        "Mean":  4.044,
+                                        "SD":  0.956,
+                                        "Median":  4,
+                                        "Variance":  0.914,
+                                        "Skewness":  -0.848,
+                                        "Importance":  0.773,
+                                        "D1":  4,
+                                        "D2":  9,
+                                        "D3":  47,
+                                        "D4":  79,
+                                        "D5":  87,
+                                        "D1_Pct":  1.8,
+                                        "D2_Pct":  4,
+                                        "D3_Pct":  20.8,
+                                        "D4_Pct":  35,
+                                        "D5_Pct":  38.5,
+                                        "Quadrant":  "II (Pertahankan Prestasi / Keep Up Good Work)"
+                                    }
+                       },
+    "DimensionStatistics":  {
+                                "Hardware \u0026 Software":  {
+                                                                 "Dimension":  "Hardware \u0026 Software",
+                                                                 "ItemCount":  3,
+                                                                 "Mean":  3.335,
+                                                                 "Importance":  0.592,
+                                                                 "CronbachAlpha":  0.802
+                                                             },
+                                "Jaringan \u0026 Internet":  {
+                                                                 "Dimension":  "Jaringan \u0026 Internet",
+                                                                 "ItemCount":  2,
+                                                                 "Mean":  2.338,
+                                                                 "Importance":  0.432,
+                                                                 "CronbachAlpha":  0.822
+                                                             },
+                                "Fasilitas \u0026 Lingkungan":  {
+                                                                    "Dimension":  "Fasilitas \u0026 Lingkungan",
+                                                                    "ItemCount":  3,
+                                                                    "Mean":  4.179,
+                                                                    "Importance":  0.663,
+                                                                    "CronbachAlpha":  0.777
+                                                                },
+                                "Operasional \u0026 Layanan":  {
+                                                                   "Dimension":  "Operasional \u0026 Layanan",
+                                                                   "ItemCount":  2,
+                                                                   "Mean":  4.204,
+                                                                   "Importance":  0.72,
+                                                                   "CronbachAlpha":  0.866
+                                                               },
+                                "Modul Praktikum":  {
+                                                        "Dimension":  "Modul Praktikum",
+                                                        "ItemCount":  5,
+                                                        "Mean":  3.852,
+                                                        "Importance":  0.803,
+                                                        "CronbachAlpha":  0.931
+                                                    },
+                                "Dosen \u0026 Asisten":  {
+                                                             "Dimension":  "Dosen \u0026 Asisten",
+                                                             "ItemCount":  5,
+                                                             "Mean":  3.977,
+                                                             "Importance":  0.755,
+                                                             "CronbachAlpha":  0.946
+                                                         }
+                            },
+    "OverallReliability":  {
+                               "CronbachAlpha":  0.938
+                           },
+    "RegressionModel":  {
+                            "R2":  0.9942,
+                            "F_Statistic":  7504.522,
+                            "AdjustedR2":  0.994,
+                            "Coefficients":  {
+                                                 "Konstanta (Intercept)":  {
+                                                                               "Beta":  0.0409,
+                                                                               "StdError":  0.0205,
+                                                                               "tStatistic":  1.99,
+                                                                               "pValue":  "0.0467",
+                                                                               "Sig":  "*"
+                                                                           },
+                                                 "Hardware \u0026 Software (X1)":  {
+                                                                                       "Beta":  0.1468,
+                                                                                       "StdError":  0.005,
+                                                                                       "tStatistic":  29.627,
+                                                                                       "pValue":  "\u003c 0.001",
+                                                                                       "Sig":  "***"
+                                                                                   },
+                                                 "Jaringan \u0026 Internet (X2)":  {
+                                                                                       "Beta":  0.097,
+                                                                                       "StdError":  0.0035,
+                                                                                       "tStatistic":  27.548,
+                                                                                       "pValue":  "\u003c 0.001",
+                                                                                       "Sig":  "***"
+                                                                                   },
+                                                 "Fasilitas \u0026 Lingkungan (X3)":  {
+                                                                                          "Beta":  0.2024,
+                                                                                          "StdError":  0.0068,
+                                                                                          "tStatistic":  29.641,
+                                                                                          "pValue":  "\u003c 0.001",
+                                                                                          "Sig":  "***"
+                                                                                      },
+                                                 "Modul Praktikum (X4)":  {
+                                                                              "Beta":  0.2739,
+                                                                              "StdError":  0.0075,
+                                                                              "tStatistic":  36.614,
+                                                                              "pValue":  "\u003c 0.001",
+                                                                              "Sig":  "***"
+                                                                          },
+                                                 "Dosen \u0026 Asisten (X5)":  {
+                                                                                   "Beta":  0.2716,
+                                                                                   "StdError":  0.0059,
+                                                                                   "tStatistic":  46.37,
+                                                                                   "pValue":  "\u003c 0.001",
+                                                                                   "Sig":  "***"
+                                                                               }
+                                             }
+                        },
+    "ANOVA_Cohorts":  {
+                          "Hardware \u0026 Software":  {
+                                                           "Dimension":  "Hardware \u0026 Software",
+                                                           "Mean_2023":  3.081,
+                                                           "Mean_2024":  3.365,
+                                                           "Mean_2025":  3.489,
+                                                           "F_Statistic":  3.4,
+                                                           "pValue":  "0.0654",
+                                                           "Sig":  "Tidak Signifikan (ns)"
+                                                       },
+                          "Jaringan \u0026 Internet":  {
+                                                           "Dimension":  "Jaringan \u0026 Internet",
+                                                           "Mean_2023":  1.823,
+                                                           "Mean_2024":  2.535,
+                                                           "Mean_2025":  2.534,
+                                                           "F_Statistic":  8.781,
+                                                           "pValue":  "0.0031",
+                                                           "Sig":  "Signifikan (*)"
+                                                       },
+                          "Fasilitas \u0026 Lingkungan":  {
+                                                              "Dimension":  "Fasilitas \u0026 Lingkungan",
+                                                              "Mean_2023":  4.118,
+                                                              "Mean_2024":  4.063,
+                                                              "Mean_2025":  4.301,
+                                                              "F_Statistic":  2.016,
+                                                              "pValue":  "0.1558",
+                                                              "Sig":  "Tidak Signifikan (ns)"
+                                                          },
+                          "Operasional \u0026 Layanan":  {
+                                                             "Dimension":  "Operasional \u0026 Layanan",
+                                                             "Mean_2023":  4.081,
+                                                             "Mean_2024":  4.218,
+                                                             "Mean_2025":  4.24,
+                                                             "F_Statistic":  0.66,
+                                                             "pValue":  "0.417",
+                                                             "Sig":  "Tidak Signifikan (ns)"
+                                                         },
+                          "Modul Praktikum":  {
+                                                  "Dimension":  "Modul Praktikum",
+                                                  "Mean_2023":  3.671,
+                                                  "Mean_2024":  3.809,
+                                                  "Mean_2025":  4,
+                                                  "F_Statistic":  2.765,
+                                                  "pValue":  "0.0965",
+                                                  "Sig":  "Tidak Signifikan (ns)"
+                                              },
+                          "Dosen \u0026 Asisten":  {
+                                                       "Dimension":  "Dosen \u0026 Asisten",
+                                                       "Mean_2023":  3.887,
+                                                       "Mean_2024":  3.791,
+                                                       "Mean_2025":  4.214,
+                                                       "F_Statistic":  5.237,
+                                                       "pValue":  "0.0222",
+                                                       "Sig":  "Signifikan (*)"
+                                                   }
+                      },
+    "KMeans_Clusters":  {
+                            "Klaster 1: Mahasiswa Kritis (Ketidakpuasan Infrastruktur)":  {
+                                                                                              "Size":  51,
+                                                                                              "Percentage":  22.6,
+                                                                                              "Centroids":  {
+                                                                                                                "Hardware \u0026 Software":  2.7,
+                                                                                                                "Jaringan \u0026 Internet":  2.12,
+                                                                                                                "Fasilitas \u0026 Lingkungan":  3.14,
+                                                                                                                "Operasional \u0026 Layanan":  3.12,
+                                                                                                                "Modul Praktikum":  2.8,
+                                                                                                                "Dosen \u0026 Asisten":  2.91
+                                                                                                            }
+                                                                                          },
+                            "Klaster 2: Mahasiswa Puas Moderat":  {
+                                                                      "Size":  85,
+                                                                      "Percentage":  37.6,
+                                                                      "Centroids":  {
+                                                                                        "Hardware \u0026 Software":  3.06,
+                                                                                        "Jaringan \u0026 Internet":  1.36,
+                                                                                        "Fasilitas \u0026 Lingkungan":  4.42,
+                                                                                        "Operasional \u0026 Layanan":  4.42,
+                                                                                        "Modul Praktikum":  3.92,
+                                                                                        "Dosen \u0026 Asisten":  4.1
+                                                                                    }
+                                                                  },
+                            "Klaster 3: Mahasiswa Sangat Puas":  {
+                                                                     "Size":  90,
+                                                                     "Percentage":  39.8,
+                                                                     "Centroids":  {
+                                                                                       "Hardware \u0026 Software":  3.96,
+                                                                                       "Jaringan \u0026 Internet":  3.38,
+                                                                                       "Fasilitas \u0026 Lingkungan":  4.54,
+                                                                                       "Operasional \u0026 Layanan":  4.62,
+                                                                                       "Modul Praktikum":  4.38,
+                                                                                       "Dosen \u0026 Asisten":  4.46
+                                                                                   }
+                                                                 }
+                        },
+    "NLP_Sentiment":  {
+                          "ChiSquareTest":  {
+                                                "ChiSquare":  82.326,
+                                                "pValue":  0.0001,
+                                                "df":  4
+                                            },
+                          "SDM":  {
+                                      "TotalFeedback":  162,
+                                      "Positive":  77,
+                                      "Neutral":  68,
+                                      "Negative":  17,
+                                      "Pos_Pct":  47.5,
+                                      "Neu_Pct":  42,
+                                      "Neg_Pct":  10.5,
+                                      "TopWords":  [
+                                                       {
+                                                           "Term":  "asisten",
+                                                           "Count":  62
+                                                       },
+                                                       {
+                                                           "Term":  "baik",
+                                                           "Count":  41
+                                                       },
+                                                       {
+                                                           "Term":  "dosen",
+                                                           "Count":  40
+                                                       },
+                                                       {
+                                                           "Term":  "praktikum",
+                                                           "Count":  34
+                                                       },
+                                                       {
+                                                           "Term":  "materi",
+                                                           "Count":  30
+                                                       },
+                                                       {
+                                                           "Term":  "tidak",
+                                                           "Count":  28
+                                                       },
+                                                       {
+                                                           "Term":  "mahasiswa",
+                                                           "Count":  25
+                                                       },
+                                                       {
+                                                           "Term":  "menjelaskan",
+                                                           "Count":  25
+                                                       },
+                                                       {
+                                                           "Term":  "bagus",
+                                                           "Count":  23
+                                                       },
+                                                       {
+                                                           "Term":  "cukup",
+                                                           "Count":  19
+                                                       }
+                                                   ],
+                                      "TopBigrams":  [
+                                                         {
+                                                             "Count":  16,
+                                                             "Bigram":  "asisten dosen"
+                                                         },
+                                                         {
+                                                             "Count":  11,
+                                                             "Bigram":  "dosen asisten"
+                                                         },
+                                                         {
+                                                             "Count":  11,
+                                                             "Bigram":  "sangat baik"
+                                                         },
+                                                         {
+                                                             "Count":  10,
+                                                             "Bigram":  "cukup baik"
+                                                         },
+                                                         {
+                                                             "Count":  6,
+                                                             "Bigram":  "menguasai materi"
+                                                         },
+                                                         {
+                                                             "Count":  5,
+                                                             "Bigram":  "beberapa asisten"
+                                                         },
+                                                         {
+                                                             "Count":  5,
+                                                             "Bigram":  "peserta praktikum"
+                                                         },
+                                                         {
+                                                             "Count":  4,
+                                                             "Bigram":  "mahasiswa kesulitan"
+                                                         }
+                                                     ]
+                                  },
+                          "Facility":  {
+                                           "TotalFeedback":  172,
+                                           "Positive":  47,
+                                           "Neutral":  94,
+                                           "Negative":  31,
+                                           "Pos_Pct":  27.3,
+                                           "Neu_Pct":  54.7,
+                                           "Neg_Pct":  18,
+                                           "TopWords":  [
+                                                            {
+                                                                "Term":  "modul",
+                                                                "Count":  86
+                                                            },
+                                                            {
+                                                                "Term":  "internet",
+                                                                "Count":  43
+                                                            },
+                                                            {
+                                                                "Term":  "tidak",
+                                                                "Count":  41
+                                                            },
+                                                            {
+                                                                "Term":  "komputer",
+                                                                "Count":  39
+                                                            },
+                                                            {
+                                                                "Term":  "lab",
+                                                                "Count":  31
+                                                            },
+                                                            {
+                                                                "Term":  "fasilitas",
+                                                                "Count":  27
+                                                            },
+                                                            {
+                                                                "Term":  "koneksi",
+                                                                "Count":  27
+                                                            },
+                                                            {
+                                                                "Term":  "baik",
+                                                                "Count":  26
+                                                            },
+                                                            {
+                                                                "Term":  "praktikum",
+                                                                "Count":  26
+                                                            },
+                                                            {
+                                                                "Term":  "cukup",
+                                                                "Count":  23
+                                                            }
+                                                        ],
+                                           "TopBigrams":  [
+                                                              {
+                                                                  "Count":  26,
+                                                                  "Bigram":  "koneksi internet"
+                                                              },
+                                                              {
+                                                                  "Count":  9,
+                                                                  "Bigram":  "cukup baik"
+                                                              },
+                                                              {
+                                                                  "Count":  9,
+                                                                  "Bigram":  "komputer lab"
+                                                              },
+                                                              {
+                                                                  "Count":  6,
+                                                                  "Bigram":  "modul modul"
+                                                              },
+                                                              {
+                                                                  "Count":  6,
+                                                                  "Bigram":  "modul praktikum"
+                                                              },
+                                                              {
+                                                                  "Count":  6,
+                                                                  "Bigram":  "upgrade komputer"
+                                                              },
+                                                              {
+                                                                  "Count":  5,
+                                                                  "Bigram":  "kecepatan internet"
+                                                              },
+                                                              {
+                                                                  "Count":  4,
+                                                                  "Bigram":  "proses pembelajaran"
+                                                              }
+                                                          ]
+                                       },
+                          "Technical":  {
+                                            "TotalFeedback":  190,
+                                            "Positive":  15,
+                                            "Neutral":  108,
+                                            "Negative":  67,
+                                            "Pos_Pct":  7.9,
+                                            "Neu_Pct":  56.8,
+                                            "Neg_Pct":  35.3,
+                                            "TopWords":  [
+                                                             {
+                                                                 "Term":  "internet",
+                                                                 "Count":  90
+                                                             },
+                                                             {
+                                                                 "Term":  "komputer",
+                                                                 "Count":  77
+                                                             },
+                                                             {
+                                                                 "Term":  "koneksi",
+                                                                 "Count":  58
+                                                             },
+                                                             {
+                                                                 "Term":  "tidak",
+                                                                 "Count":  55
+                                                             },
+                                                             {
+                                                                 "Term":  "lab",
+                                                                 "Count":  49
+                                                             },
+                                                             {
+                                                                 "Term":  "jaringan",
+                                                                 "Count":  40
+                                                             },
+                                                             {
+                                                                 "Term":  "praktikum",
+                                                                 "Count":  29
+                                                             },
+                                                             {
+                                                                 "Term":  "lagi",
+                                                                 "Count":  23
+                                                             },
+                                                             {
+                                                                 "Term":  "upgrade",
+                                                                 "Count":  20
+                                                             },
+                                                             {
+                                                                 "Term":  "lambat",
+                                                                 "Count":  19
+                                                             }
+                                                         ],
+                                            "TopBigrams":  [
+                                                               {
+                                                                   "Count":  49,
+                                                                   "Bigram":  "koneksi internet"
+                                                               },
+                                                               {
+                                                                   "Count":  14,
+                                                                   "Bigram":  "jaringan internet"
+                                                               },
+                                                               {
+                                                                   "Count":  13,
+                                                                   "Bigram":  "komputer lab"
+                                                               },
+                                                               {
+                                                                   "Count":  8,
+                                                                   "Bigram":  "beberapa komputer"
+                                                               },
+                                                               {
+                                                                   "Count":  7,
+                                                                   "Bigram":  "komputer tidak"
+                                                               },
+                                                               {
+                                                                   "Count":  7,
+                                                                   "Bigram":  "spesifikasi komputer"
+                                                               },
+                                                               {
+                                                                   "Count":  7,
+                                                                   "Bigram":  "internet lab"
+                                                               },
+                                                               {
+                                                                   "Count":  6,
+                                                                   "Bigram":  "lab informatika"
+                                                               }
+                                                           ]
+                                        }
+                      }
+}

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Evaluasi Praktikum Informatika - Universitas Jenderal Achmad Yani</title>
+  <link rel="icon" type="image/png" href="logo_unjani.png">
+  
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom Stylesheet Nuansa Hijau UNJANI -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- App Header with UNJANI Logo -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand-section">
+        <img src="logo_unjani.png" alt="Logo Universitas Jenderal Achmad Yani" class="brand-logo-img">
+        <div class="brand-info">
+          <h1>
+            Lab Informatika UNJANI
+            <span class="brand-badge-unjani">Universitas Jenderal Achmad Yani</span>
+          </h1>
+          <p>Dashboard Analisis Statistika Deskriptif Evaluasi Praktikum &bull; Visualisasi Interaktif Drill-Down / Up</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="theme-toggle-btn" class="btn-icon" title="Ganti Tema Gelap / Terang">
+          <span id="theme-icon">🌙</span>
+        </button>
+        <button id="print-btn" class="btn btn-secondary btn-sm" onclick="window.print()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+          Cetak / PDF
+        </button>
+        <button id="export-summary-btn" class="btn btn-primary btn-sm">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Ekspor Ringkasan CSV
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Wrapper -->
+  <main class="main-wrapper">
+
+    <!-- Global Filter Control Bar -->
+    <section class="filter-bar">
+      <div class="filter-group-left">
+        <div class="filter-item">
+          <label for="filter-angkatan" class="filter-label">Kohor Angkatan:</label>
+          <select id="filter-angkatan" class="select-custom">
+            <option value="all">Semua Angkatan (226)</option>
+            <option value="2023">Angkatan 2023 (62)</option>
+            <option value="2024">Angkatan 2024 (85)</option>
+            <option value="2025">Angkatan 2025 (73)</option>
+            <option value="Lainnya">Angkatan Lain / 2022 (6)</option>
+          </select>
+        </div>
+
+        <div class="filter-item">
+          <label for="filter-periode" class="filter-label">Periode Survei:</label>
+          <select id="filter-periode" class="select-custom">
+            <option value="all">Semua Periode (Maret - April 2026)</option>
+            <option value="minggu-1">Minggu I (02 - 08 Maret 2026)</option>
+            <option value="minggu-2">Minggu II (09 - 15 Maret 2026)</option>
+            <option value="minggu-3">Minggu III+ (16 Maret - 06 April 2026)</option>
+          </select>
+        </div>
+
+        <button id="reset-filter-btn" class="btn btn-secondary btn-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"></path><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+          Reset Filter
+        </button>
+      </div>
+
+      <div class="filter-group-right">
+        <div class="filter-badge">
+          <span id="active-filter-indicator">Menampilkan: <strong>226 Responden</strong> (100%)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top KPI Cards Grid -->
+    <section class="kpi-grid">
+      <!-- Total Responden -->
+      <div class="kpi-card" style="--card-accent: #059669;">
+        <div>
+          <div class="kpi-title">Total Responden</div>
+          <div class="kpi-value" id="kpi-total-respondents">226</div>
+          <div class="kpi-subtext" id="kpi-subtext-sample">Sampel Mahasiswa Informatika</div>
+        </div>
+        <div class="kpi-icon-wrap" style="background: var(--primary-light); color: var(--primary);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
+      </div>
+
+      <!-- Skor Kepuasan Keseluruhan (CSAT / CSI) -->
+      <div class="kpi-card" style="--card-accent: #10b981;">
+        <div>
+          <div class="kpi-title">Indeks Kepuasan (CSI)</div>
+          <div class="kpi-value" id="kpi-csi-percent">74.8%</div>
+          <div class="kpi-subtext" id="kpi-csi-mean">Rata-rata: <strong>3.74</strong> / 5.00</div>
+        </div>
+        <div class="kpi-icon-wrap" style="background: var(--success-light); color: var(--success);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+      </div>
+
+      <!-- Dimensi Unggulan (Tertinggi) -->
+      <div class="kpi-card" style="--card-accent: #d97706;">
+        <div>
+          <div class="kpi-title">Dimensi Tertinggi</div>
+          <div class="kpi-value" id="kpi-highest-score" style="font-size: 1.5rem;">4.20 <span style="font-size: 0.9rem; font-weight: normal;">/ 5.0</span></div>
+          <div class="kpi-subtext" id="kpi-highest-name">Tata Kelola & Layanan</div>
+        </div>
+        <div class="kpi-icon-wrap" style="background: #fef3c7; color: #d97706;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.45 1-1 1H7c-.55 0-1-.45-1-1v-2.34"></path><path d="M18 14.66V17c0 .55-.45 1-1 1h-2c-.55 0-1-.45-1-1v-2.34"></path><path d="M14 15.34A6 6 0 0 1 10 15.34"></path><path d="M18 9a6 6 0 0 0-12 0v2a6 6 0 0 0 12 0V9z"></path></svg>
+        </div>
+      </div>
+
+      <!-- Dimensi Kritis / Prioritas Perbaikan -->
+      <div class="kpi-card" style="--card-accent: #ef4444;">
+        <div>
+          <div class="kpi-title">Prioritas Perbaikan</div>
+          <div class="kpi-value" id="kpi-lowest-score" style="font-size: 1.5rem; color: var(--danger);">2.34 <span style="font-size: 0.9rem; font-weight: normal;">/ 5.0</span></div>
+          <div class="kpi-subtext" id="kpi-lowest-name">Jaringan Internet (Kritis)</div>
+        </div>
+        <div class="kpi-icon-wrap" style="background: var(--danger-light); color: var(--danger);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        </div>
+      </div>
+
+      <!-- Reliabilitas Instrumen (Cronbach's Alpha) -->
+      <div class="kpi-card" style="--card-accent: #059669;">
+        <div>
+          <div class="kpi-title">Reliabilitas (Alpha)</div>
+          <div class="kpi-value" id="kpi-alpha-val">0.938</div>
+          <div class="kpi-subtext">Sangat Konsisten / Andal</div>
+        </div>
+        <div class="kpi-icon-wrap" style="background: var(--primary-light); color: var(--primary);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab Navigation -->
+    <nav class="tab-navigation">
+      <button class="tab-btn active" data-tab="tab-drilldown">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+        Eksplorasi Dimensi (Drill-Down / Up)
+      </button>
+      <button class="tab-btn" data-tab="tab-matrix">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line><line x1="9" y1="3" x2="9" y2="21"></line><line x1="15" y1="3" x2="15" y2="21"></line></svg>
+        Matriks Statistika Lengkap
+      </button>
+      <button class="tab-btn" data-tab="tab-correlation">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
+        Matriks Korelasi (Heatmap)
+      </button>
+      <button class="tab-btn" data-tab="tab-qualitative">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        Umpan Balik Kualitatif
+      </button>
+      <button class="tab-btn" data-tab="tab-raw">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        Data Mentah & Ekspor
+      </button>
+    </nav>
+
+    <!-- =========================================================================
+         TAB 1: EKSPLORASI DRILL-DOWN & DRILL-UP (CORE INTERACTIVE ENGINE)
+         ========================================================================= -->
+    <div id="tab-drilldown" class="tab-content active">
+
+      <!-- Breadcrumb Bar for Navigation -->
+      <div class="drill-breadcrumb-bar">
+        <div class="breadcrumb-list" id="breadcrumb-container">
+          <!-- Dynamically populated -->
+        </div>
+
+        <div class="drill-actions">
+          <button id="btn-drill-up" class="btn btn-secondary btn-sm" style="display: none;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+            Drill Up (Level Sebelumnya)
+          </button>
+          <button id="btn-drill-home" class="btn btn-secondary btn-sm" style="display: none;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            Beranda Dimensi
+          </button>
+        </div>
+      </div>
+
+      <!-- ================= LEVEL 1: MACRO DIMENSION VIEW ================= -->
+      <div id="drill-level-1" class="drill-view">
+        <div class="grid-2" style="margin-bottom: 1.5rem;">
+          <!-- Radar Chart 6 Dimensions -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title-group">
+                <h3>Profil Radar 6 Dimensi Evaluasi</h3>
+                <p>Keseimbangan performa praktikum informatika berdasarkan rata-rata skor dimensi.</p>
+              </div>
+            </div>
+            <div class="chart-container">
+              <canvas id="chart-radar-dimensions"></canvas>
+            </div>
+          </div>
+
+          <!-- Bar Chart Ranking of Dimensions -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title-group">
+                <h3>Peringkat Rata-Rata Dimensi</h3>
+                <p>Urutan dimensi dari performa terbaik hingga area yang membutuhkan perbaikan mendesak.</p>
+              </div>
+            </div>
+            <div class="chart-container">
+              <canvas id="chart-bar-dimensions"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section Header for Dimension Cards -->
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+          <div>
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-main);">Pilih Dimensi untuk Analisis Mendalam (Drill Down)</h3>
+            <p style="font-size: 0.82rem; color: var(--text-muted);">Klik pada kartu dimensi mana saja untuk masuk ke rincian butir indikator kuesioner.</p>
+          </div>
+        </div>
+
+        <!-- 6 Interactive Dimension Cards Grid -->
+        <div class="grid-3" id="dim-cards-container">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+
+      <!-- ================= LEVEL 2: DIMENSION DETAIL (INDICATORS) ================= -->
+      <div id="drill-level-2" class="drill-view" style="display: none;">
+        <!-- Dimension Banner -->
+        <div id="level2-dimension-banner" class="card" style="margin-bottom: 1.5rem; background: linear-gradient(135deg, var(--bg-card), var(--bg-subtle));">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Charts for Indicators in Dimension -->
+        <div class="grid-2" style="margin-bottom: 1.5rem;">
+          <!-- Indicator Mean Comparison -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title-group">
+                <h3>Perbandingan Rata-Rata Butir Indikator</h3>
+                <p>Skor rata-rata hitung (Mean) tiap indikator dalam dimensi ini.</p>
+              </div>
+            </div>
+            <div class="chart-container">
+              <canvas id="chart-indicators-mean"></canvas>
+            </div>
+          </div>
+
+          <!-- Likert 100% Stacked Distribution -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title-group">
+                <h3>Distribusi Skala Likert (1 - 5)</h3>
+                <p>Proporsi persentase pilihan jawaban: Sangat Tidak Setuju (1) s/d Sangat Setuju (5).</p>
+              </div>
+            </div>
+            <div class="chart-container">
+              <canvas id="chart-indicators-likert"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grid of Indicators for Drill Down to Level 3 -->
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+          <div>
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-main);">Daftar Butir Pertanyaan dalam Dimensi Ini</h3>
+            <p style="font-size: 0.82rem; color: var(--text-muted);">Klik indikator untuk melakukan Drill Down ke analisis distribusi kohor dan umpan balik mahasiswa.</p>
+          </div>
+        </div>
+
+        <div class="grid-2" id="indicators-cards-container" style="margin-bottom: 1.5rem;">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Statistical Summary Table for this Dimension -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h3>Ringkasan Statistika Deskriptif Indikator</h3>
+              <p>Ukuran pemusatan dan penyebaran data untuk butir indikator dimensi terpilih.</p>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table" id="table-dimension-indicators">
+              <thead>
+                <tr>
+                  <th>Kode</th>
+                  <th>Butir Pertanyaan</th>
+                  <th>N</th>
+                  <th>Mean (&mu;)</th>
+                  <th>Median</th>
+                  <th>Modus</th>
+                  <th>Std Dev (&sigma;)</th>
+                  <th>Varians (&sigma;&sup2;)</th>
+                  <th>IQR</th>
+                  <th>Skewness</th>
+                  <th>% Puas (4-5)</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-dimension-indicators">
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= LEVEL 3: INDICATOR DEEP DIVE (COHORT & FEEDBACK) ================= -->
+      <div id="drill-level-3" class="drill-view" style="display: none;">
+        <!-- Indicator Header Info -->
+        <div id="level3-indicator-header" class="card" style="margin-bottom: 1.5rem;">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Five-Number Summary Card -->
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h3>Five-Number Summary & Parameter Dispersi</h3>
+              <p>Ringkasan 5 angka kunci (Min, Kuartil 1, Median, Kuartil 3, Max) dan ukuran penyebaran.</p>
+            </div>
+          </div>
+          <div class="five-num-grid" id="five-number-summary-container">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Two Column Deep Dive Charts -->
+        <div class="grid-2" style="margin-bottom: 1.5rem;">
+          <!-- Histogram of Score Frequency -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title-group">
+                <h3>Histogram Frekuensi Skor Jawaban</h3>
+                <p>Jumlah responden yang memilih skala nilai 1 sampai 5.</p>
+              </div>
+            </div>
+            <div class="chart-container">
+              <canvas id="chart-indicator-histogram"></canvas>
+            </div>
+          </div>
+
+          <!-- Cohort / Angkatan Breakdown Comparison -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title-group">
+                <h3>Perbandingan Rata-Rata Antar Kohor Angkatan</h3>
+                <p>Perbedaan skor rata-rata antara Angkatan 2023, 2024, 2025, dan lainnya.</p>
+              </div>
+            </div>
+            <div class="chart-container">
+              <canvas id="chart-indicator-cohort"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cohort Statistical Comparison Table -->
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h3>Komparasi Statistika Antar Angkatan untuk Indikator Ini</h3>
+              <p>Perbandingan metrik Mean, Median, Standar Deviasi, dan Persentase Kepuasan tiap angkatan.</p>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Kohor Angkatan</th>
+                  <th>Jumlah Responden (N)</th>
+                  <th>Mean (&mu;)</th>
+                  <th>Median</th>
+                  <th>Standar Deviasi (&sigma;)</th>
+                  <th>Min - Max</th>
+                  <th>% Setuju / Puas (4-5)</th>
+                  <th>Status Penilaian</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-cohort-comparison">
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Relevant Student Feedback Quotes -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h3>Masukan & Keluhan Mahasiswa yang Relevan</h3>
+              <p>Komentar dan aspirasi terbuka responden yang berhubungan dengan topik indikator ini.</p>
+            </div>
+          </div>
+          <div id="relevant-feedback-container" class="feedback-card-list">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- =========================================================================
+         TAB 2: MATRIKS STATISTIKA DESKRIPTIF LENGKAP
+         ========================================================================= -->
+    <div id="tab-matrix" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <h3>Tabel Analisis Statistika Deskriptif Lengkap (20 Indikator)</h3>
+            <p>Memuat seluruh ukuran tendensi sentral, dispersi/variabilitas, bentuk distribusi, dan indeks CSI.</p>
+          </div>
+          <div style="display: flex; gap: 0.5rem; align-items: center;">
+            <select id="matrix-dim-filter" class="select-custom">
+              <option value="all">Semua Dimensi (20 Indikator)</option>
+              <option value="D1">D1: Hardware & Software</option>
+              <option value="D2">D2: Jaringan Internet</option>
+              <option value="D3">D3: Lingkungan & Fisik</option>
+              <option value="D4">D4: Layanan & Jadwal</option>
+              <option value="D5">D5: Modul Praktikum</option>
+              <option value="D6">D6: Dosen & Asisten</option>
+            </select>
+            <button id="export-matrix-csv" class="btn btn-primary btn-sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Unduh CSV
+            </button>
+          </div>
+        </div>
+
+        <!-- Info Glossary -->
+        <div style="background: var(--bg-subtle); padding: 0.85rem 1.25rem; border-radius: var(--radius-md); margin-bottom: 1.25rem; font-size: 0.8rem; color: var(--text-muted); display: flex; flex-wrap: wrap; gap: 1.5rem;">
+          <div><strong>Mean (&mu;):</strong> Rata-rata hitung</div>
+          <div><strong>Median (Me):</strong> Nilai tengah (P50)</div>
+          <div><strong>Modus (Mo):</strong> Nilai terbanyak</div>
+          <div><strong>Std Dev (&sigma;):</strong> Sebaran terhadap rata-rata</div>
+          <div><strong>Varians (&sigma;&sup2;):</strong> Kuadrat deviasi</div>
+          <div><strong>IQR:</strong> Kuartil 3 - Kuartil 1</div>
+          <div><strong>Skewness:</strong> Kemiringan (&lt;0 miring kiri, &gt;0 miring kanan)</div>
+          <div><strong>% Puas:</strong> Proporsi responden skor 4 & 5</div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table" id="full-stats-table">
+            <thead>
+              <tr>
+                <th onclick="sortFullTable('code')">Kode ⬍</th>
+                <th onclick="sortFullTable('dim')">Dimensi ⬍</th>
+                <th onclick="sortFullTable('text')">Pernyataan Indikator ⬍</th>
+                <th onclick="sortFullTable('mean')">Mean ⬍</th>
+                <th onclick="sortFullTable('median')">Median ⬍</th>
+                <th onclick="sortFullTable('mode')">Modus ⬍</th>
+                <th onclick="sortFullTable('stdDev')">Std Dev ⬍</th>
+                <th onclick="sortFullTable('variance')">Varians ⬍</th>
+                <th onclick="sortFullTable('q1')">Q1 ⬍</th>
+                <th onclick="sortFullTable('q3')">Q3 ⬍</th>
+                <th onclick="sortFullTable('iqr')">IQR ⬍</th>
+                <th onclick="sortFullTable('skewness')">Skewness ⬍</th>
+                <th onclick="sortFullTable('kurtosis')">Kurtosis ⬍</th>
+                <th onclick="sortFullTable('pctPuas')">% Puas ⬍</th>
+                <th onclick="sortFullTable('pctTidakPuas')">% Tidak Puas ⬍</th>
+                <th>Tindakan</th>
+              </tr>
+            </thead>
+            <tbody id="full-stats-tbody">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         TAB 3: MATRIKS KORELASI (HEATMAP)
+         ========================================================================= -->
+    <div id="tab-correlation" class="tab-content">
+      <div class="grid-2">
+        <!-- Correlation Heatmap Table -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h3>Matriks Korelasi Pearson Antar Dimensi</h3>
+              <p>Koefisien korelasi linier (r) antar dimensi evaluasi (-1.0 s/d +1.0).</p>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="corr-heatmap-table" id="corr-heatmap-table">
+              <!-- Populated by JS -->
+            </table>
+          </div>
+
+          <!-- Legend -->
+          <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1rem; font-size: 0.78rem; color: var(--text-muted);">
+            <div style="display: flex; align-items: center; gap: 0.3rem;">
+              <span style="width: 14px; height: 14px; background: #a7f3d0; border-radius: 3px; display: inline-block;"></span> Rendah (&lt; 0.3)
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.3rem;">
+              <span style="width: 14px; height: 14px; background: #34d399; border-radius: 3px; display: inline-block;"></span> Sedang (0.3 - 0.5)
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.3rem;">
+              <span style="width: 14px; height: 14px; background: #059669; border-radius: 3px; display: inline-block;"></span> Kuat (0.5 - 0.7)
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.3rem;">
+              <span style="width: 14px; height: 14px; background: #065f46; border-radius: 3px; display: inline-block;"></span> Sangat Kuat (&gt; 0.7)
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Correlation Insights -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h3>Temuan & Wawasan Hubungan Antar Dimensi</h3>
+              <p>Analisis keterkaitan struktural berdasarkan koefisien korelasi data.</p>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 1rem;" id="correlation-insights-container">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         TAB 4: UMPAN BALIK KUALITATIF MAHASISWA
+         ========================================================================= -->
+    <div id="tab-qualitative" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <h3>Eksplorasi Aspirasi & Umpan Balik Kualitatif</h3>
+            <p>Analisis saran perbaikan teknis laboratorium, kinerja dosen/asisten, serta sarana & modul.</p>
+          </div>
+          <div style="display: flex; gap: 0.5rem; align-items: center;">
+            <select id="filter-feedback-cat" class="select-custom">
+              <option value="all">Semua Kategori Masukan</option>
+              <option value="teknis">Saran Masalah Teknis Lab</option>
+              <option value="sdm">Saran Kinerja SDM (Dosen/Asisten)</option>
+              <option value="fasilitas">Saran Fasilitas & Modul</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Keyword Tags Cloud -->
+        <div style="margin-bottom: 1rem;">
+          <div style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.5rem;">
+            Topik Kunci Paling Sering Muncul (Klik untuk Menyaring):
+          </div>
+          <div class="tag-cloud" id="feedback-tag-cloud">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Search Input -->
+        <div style="margin-bottom: 1.25rem;">
+          <input type="text" id="search-feedback-input" class="select-custom" style="width: 100%; padding: 0.65rem 1rem;" placeholder="Cari kata dalam saran mahasiswa (contoh: wifi, ac, mouse, modul, asisten)...">
+        </div>
+
+        <!-- Feedback Cards List -->
+        <div class="feedback-card-list" id="feedback-list-container">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination-wrap">
+          <div style="font-size: 0.82rem; color: var(--text-muted);" id="feedback-page-info">
+            Menampilkan 1-10 dari 226 entri
+          </div>
+          <div class="pagination-controls" id="feedback-pagination-btns">
+            <!-- Buttons -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         TAB 5: DATA MENTAH & EKSPOR LENGKAP
+         ========================================================================= -->
+    <div id="tab-raw" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <h3>Grid Data Mentah Responden (226 Baris)</h3>
+            <p>Seluruh entri respon kuesioner evaluasi yang dapat disaring dan diekspor.</p>
+          </div>
+          <div style="display: flex; gap: 0.5rem; align-items: center;">
+            <button id="export-raw-csv" class="btn btn-primary btn-sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Unduh Data CSV
+            </button>
+            <button id="export-raw-json" class="btn btn-secondary btn-sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+              Unduh Data JSON
+            </button>
+          </div>
+        </div>
+
+        <!-- Search & Info -->
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.75rem;">
+          <input type="text" id="search-raw-input" class="select-custom" style="width: 320px;" placeholder="Cari berdasarkan ID, NIM, atau Angkatan...">
+          <div style="font-size: 0.82rem; color: var(--text-muted);" id="raw-total-info">
+            Total: 226 Responden
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="table-responsive" style="max-height: 520px; overflow-y: auto;">
+          <table class="data-table" id="raw-data-table">
+            <thead>
+              <tr id="raw-table-header">
+                <!-- Populated by JS -->
+              </tr>
+            </thead>
+            <tbody id="raw-table-body">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination-wrap">
+          <div style="font-size: 0.82rem; color: var(--text-muted);" id="raw-page-info">
+            Menampilkan 1-20 dari 226
+          </div>
+          <div class="pagination-controls" id="raw-pagination-btns">
+            <!-- Buttons -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- App Footer -->
+  <footer class="app-footer">
+    <div style="max-width: 1440px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <img src="logo_unjani.png" alt="UNJANI" style="width: 32px; height: 32px; object-fit: contain;">
+        <div>
+          <strong>Laboratorium Informatika UNJANI</strong> &bull; Fakultas Sains dan Informatika &bull; Universitas Jenderal Achmad Yani
+        </div>
+      </div>
+      <div>
+        Dataset: <code>Form Survey Evaluasi Praktikum Informatika (Responses).xlsx</code> &bull; N = 226 Responden
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="chart.umd.min.js"></script>
+  <script>
+    if (typeof Chart === 'undefined') {
+      document.write('<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"><\/script>');
+    }
+  </script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
