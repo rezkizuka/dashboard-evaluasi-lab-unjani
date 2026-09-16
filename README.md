@@ -14,7 +14,12 @@
   <img src="https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20Vanilla%20JS-10b981?style=flat-square" alt="Tech Stack">
   <img src="https://img.shields.io/badge/Chart.js-v4.4.1-059669?style=flat-square" alt="Chart.js">
   <img src="https://img.shields.io/badge/Sample%20Size-N%3D226-064e3b?style=flat-square" alt="Sample Size">
-  <img src="https://img.shields.io/badge/Cronbach's%20Alpha-0.938-d97706?style=flat-square" alt="Alpha">
+</p>
+
+<p align="center">
+  <a href="https://rezkizuka.github.io/dashboard-evaluasi-lab-unjani/">
+    <img src="https://img.shields.io/badge/🌐_Buka_Live_Dashboard-GitHub_Pages-059669?style=for-the-badge&logo=githubpages&logoColor=white" alt="Live Demo">
+  </a>
 </p>
 
 ---
